@@ -54,4 +54,4 @@ jobs:
 
       - name: Execute Model Training and Threshold Check
         run: |
-          python src/train.py
+          PYTHONPATH=. python src/train.py

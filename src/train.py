@@ -1,13 +1,16 @@
+from src.evaluate import evaluate_model
+from src.data_preprocessing import load_data, preprocess_data, split_data
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+import mlflow.sklearn
+import mlflow
+import yaml
 import os
 import sys
-import yaml
-import mlflow
-import mlflow.sklearn
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.linear_model import LogisticRegression
+from pathlib import Path
 
-from src.data_preprocessing import load_data, preprocess_data, split_data
-from src.evaluate import evaluate_model
+# Ensure project root directory is in sys.path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 
 def get_dvc_hash(dvc_file_path: str = "data/heart_disease.csv.dvc") -> str:
