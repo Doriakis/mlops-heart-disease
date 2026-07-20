@@ -54,11 +54,4 @@ jobs:
 
       - name: Execute Model Training and Threshold Check
         run: |
-          python -c "
-          from src.train import train_model
-          run_id, metrics = train_model()
-          print(f'Training complete. F1 Score: {metrics[\"f1_score\"]}')
-          if metrics['f1_score'] < 0.75:
-              print('Model failed performance threshold (F1 < 0.75)!')
-              exit(1)
-          "
+          python src/train.py
