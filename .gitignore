@@ -1,1 +1,23 @@
+# Byte-compiled / Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data files (tracked by DVC instead)
+data/*.csv
+!data/*.dvc
+
+# MLflow & Model Artifacts
+mlruns/
+*.pkl
+*.joblib
+models/
+
+# Virtual Environment & IDE
 venv/
+.venv/
+.vscode/
+.idea/
